@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Codding Apple JavaScript</title>
+</head>
+<body>
+  <div>
+    <button id="button">버튼</button>
+  </div>
+</body>
+<script>
+  
+  // 함수나 변수를 전역공간에서 만들면 window에 보관.
+  // this = 나를 담고있는 오브젝트를 출력한다.
+
+  // console.log(this);
+
+  var ex = {
+    data : 'Kim',
+    함수(){
+      console.log(this); // this = 나를 포함하고 있는 오브젝트 = data
+    }
+  }
+
+  // ex.함수();
+
+  var 오브젝트 = {
+    data : {
+      함수 : () => {
+        console.log(this); // 애로우 function 사용시 상위 값의 this를 쓴다.
+      }
+    }
+  }
+
+  // 오브젝트.data.함수();
+
+
+  
+  function 기계 () {
+    this.이름 = 'Kim'; // 새로 생성되는 오브젝트 = instance
+  }
+
+  var 오브젝트 = new 기계();
+
+  // console.log(오브젝트.이름);
+
+  document.getElementById('button').addEventListener('click', 
+  function(e){
+    // console.log(e.currentTarget); // 이벤트가 동작하는 곳     이벤트리스너 안에서 this는 e.currentTarget랑 같음
+    // console.log(this);
+
+    var array = [1, 2, 3];
+
+    array.forEach(function(a){
+      console.log(this);
+    });
+
+  })
+
+  var object = {
+    name : ['kim', 'park', 'choi'],
+    함수 : function(){
+      object.name.forEach((a)=>{ // 애로우 function 사용 시 내부의 this의 값을 변화시키지 않음 
+        console.log(this); // 그래서 object 값이 나옴
+      })
+    }
+  }
+
+  object.함수();
+
+</script>
+<style>
+</style>
+</html>

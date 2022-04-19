@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>HomeWork</title>
+</head>
+<body>
+  <div></div>
+  <button id="버튼">버튼이에요</button>
+</body>
+  <script>
+
+    var 사람 = {
+      name : '손흥민',
+      sayHi : function(){
+        console.log('안녕 나는' + 사람.name);
+      }
+    }
+
+    사람.sayHi();
+
+    var 자료 = {
+      data : [1, 2, 3, 4, 5]
+    }
+
+    var 합 = 0;
+
+    자료.전부더하기 = function(){
+      자료.data.forEach(function(a){
+        합 += a;
+      })
+      console.log(합);
+    }
+
+    자료.전부더하기();
+
+    document.getElementById('버튼').addEventListener('click', function(){
+
+      setTimeout(() => {
+        console.log(this.innerHTML);
+      }, 1000);
+
+    })
+
+  </script>
+</html>
