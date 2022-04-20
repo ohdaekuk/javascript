@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>template_literals</title>
+</head>
+<body>
+</body>
+<script>
+  
+  // backquote 문자열 = ``의 장점
+  // 1. 엔터키 가능
+  // 2. 중간에 변수를 넣기 쉽다.
+
+//   var 변수 = '손흥민';
+
+//   var 문자 = `안녕하세요 저는 ${변수} 입니다.`;
+
+//   function 해체분석기(문자들, 변수들){
+//     return 문자들[1] + 변수들 + 문자들[0];
+//   } 
+
+// var a = 해체분석기`안녕하세요 ${변수} 입니다` // tagged literal `문자`를 해체 분석할 수 있다.
+
+var pants = 0;
+var socks = 100;
+
+`바지${pants} 양말${socks}`;
+
+// function 문자열분석(문자열, 변수1, 변수2){
+//   return 문자열[1] + 변수1 + 문자열[0] + 변수2;
+// }
+
+// var result = 문자열분석`바지${pants} 양말${socks}`
+
+// console.log(result);
+
+function 문자열분석(문자열, 변수1, 변수2){
+
+  if(변수1 == 0){
+
+    문자열 = `바지는 품절되었습니다. 양말${socks}`;
+
+  }else{
+
+    문자열 = `바지${pants} 양말${socks}`;
+  }
+
+  return 문자열
+  
+}
+
+console.log(문자열분석`바지${pants} 양말${socks}`); 
+
+
+
+</script>
+</html>

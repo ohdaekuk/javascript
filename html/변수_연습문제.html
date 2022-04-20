@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>변수 연습문제</title>
+  
+
+</head>
+<body>
+  <div style="display: none;">모달창0</div>
+  <div style="display: none;">모달창1</div>
+  <div style="display: none;">모달창2</div>
+
+  <button>버튼0</button>
+  <button>버튼1</button>
+  <button>버튼2</button>
+</body>
+<script>
+
+  // 1
+
+  // hello();
+
+  // function hello(){
+  //   console.log(안녕);
+  //   let 안녕 = 'Hello';
+  // }
+
+  // 2
+  
+  // hello();
+
+  // function hello(){
+  //   console.log(안녕);
+  //   var 안녕 = 'Hello';
+  // }
+
+  // 3
+
+  // let a = 1;
+  // var 함수 = function(){
+  //   a = 2;
+  // }
+
+  // console.log(a);
+
+  // 4
+
+  // let a = 1;  
+  // var b = 2;
+  // window.a = 3;
+  // window.b = 4;
+
+  // console.log(a + b);
+
+  // 5
+
+  // setTimeout(() => {console.log(1);}, 1000);
+  // setTimeout(() => {console.log(2);}, 2000);
+  // setTimeout(() => {console.log(3);}, 3000);
+  // setTimeout(() => {console.log(4);}, 4000);
+  // setTimeout(() => {console.log(5);}, 5000);
+
+  for(let i = 1; i < 6; i++){
+    setTimeout(function() {console.log(i)}, i * 1000); 
+  }
+   // var는 전역변수 이기 때문에 반복문이 끝나고 setTimeout가 실행되려면 반복문이 다 실행되고 5로 남아있는다.
+   // let는 범위가 중괄호이기 때문에 1 ~ 5값이 남아있어서 정상적으로 실행이 된다.
+
+    var 버튼 = document.querySelectorAll('button');
+    var 박스 = document.querySelectorAll('div');
+
+    // 버튼[0].addEventListener('click', function(){
+    //   박스[0].style.display = 'block';
+    // })
+
+    // 버튼[1].addEventListener('click', function(){
+    //   박스[1].style.display = 'block';
+    // })
+
+    // 버튼[2].addEventListener('click', function(){
+    //   박스[2].style.display = 'block';
+    // })
+
+    for(let i = 0; i < 3; i++){
+      버튼[i].addEventListener('click', function(){
+      박스[i].style.display = 'block';
+    })
+    }
+    // var는 전역변수 이기 때문에 반복문이 끝나고 setTimeout가 실행되려면 반복문이 다 실행되고 2로 남아있는다.
+  // let는 범위가 중괄호이기 때문에 1 ~ 5값이 남아있어서 정상적으로 실행이 된다. 위와 같은 맥락
+</script>
+</html>
